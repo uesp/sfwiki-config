@@ -1,0 +1,58 @@
+<?php
+# WARNING: This file is publically viewable on the web. Do not put private data here.
+#
+# This file contains extension includes and settings.
+# It is included by LocalSettings.php.
+#
+
+wfLoadExtension( 'Cite' );
+wfLoadExtension( 'CiteThisPage' );
+wfLoadExtension( 'ConfirmEdit' );
+wfLoadExtension( 'Gadgets' );
+wfLoadExtension( 'ImageMap' );
+wfLoadExtension( 'InputBox' );
+wfLoadExtension( 'Interwiki' );
+wfLoadExtension( 'ParserFunctions' );
+wfLoadExtension( 'Renameuser' );
+wfLoadExtension( 'SpamBlacklist' );
+wfLoadExtension( 'SyntaxHighlight_GeSHi' );
+wfLoadExtension( 'TitleBlacklist' );
+wfLoadExtension( 'VisualEditor' );
+wfLoadExtension( 'WikiEditor' );
+
+wfLoadExtension( 'Scribunto' );
+$wgScribuntoDefaultEngine = 'luastandalone';
+
+wfLoadExtension( 'AbuseFilter' );
+$wgAddGroups   ['sysop'] = array ( 'abuseeditor', 'autopatrolled', 'blockuser', 'confirmed', 'patroller', 'userpatroller' );
+$wgRemoveGroups['sysop'] = array ( 'abuseeditor', 'autopatrolled', 'blockuser', 'confirmed', 'patroller', 'userpatroller');
+$wgGroupPermissions['*']['abusefilter-log'] = true;
+$wgGroupPermissions['*']['abusefilter-log-detail'] = true;
+$wgGroupPermissions['*']['abusefilter-view'] = true;
+$wgGroupPermissions['abuseeditor']['abusefilter-modify'] = true;
+$wgGroupPermissions['abuseeditor']['abusefilter-modify-restricted'] = true;
+$wgGroupPermissions['abuseeditor']['abusefilter-privatedetails'] = true;
+$wgGroupPermissions['abuseeditor']['abusefilter-revert'] = true;
+
+wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/QuestyCaptcha' ]);
+$wgCaptchaClass = 'QuestyCaptcha';
+
+# Now a more complicated one
+# Generate a random string 10 characters long
+$myChallengeLength = rand(2, 5);
+$myChallengeIndex = rand(0, 12 - $myChallengeLength);
+$myChallengeString = md5(uniqid(mt_rand(), true));
+$prefix = substr($myChallengeString, 0, $myChallengeIndex);
+$answer = substr($myChallengeString, $myChallengeIndex, $myChallengeLength);
+$suffix = substr($myChallengeString, $myChallengeIndex + $myChallengeLength, 12 - $myChallengeIndex + $myChallengeLength);
+$myChallengeString = "<span style='background-color:dimgrey'>$prefix</span><span style='background-color:darkgreen'>$answer</span><span style='background-color:dimgrey'>$suffix</span>";
+# Pick a random location in the string
+
+# Build the question/anwer
+$wgCaptchaQuestions[] = array (
+	'question' => "Please enter the characters highlighted in green in the following sequence: <code>$myChallengeString</code>",
+	'answer' => $answer
+);
+
+$wgCaptchaTriggers['addurl'] = false;
+
