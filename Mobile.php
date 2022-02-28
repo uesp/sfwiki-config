@@ -6,4 +6,7 @@
 # It is included by LocalSettings.php.
 #
 
-// MobileFrontEnd.php is included in the Extensions.php file.
+wfLoadExtension( 'MobileFrontend' );
+$wgMFDefaultSkinClass = 'SkinVector';
+
+

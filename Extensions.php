@@ -5,6 +5,8 @@
 # It is included by LocalSettings.php.
 #
 
+//TODO: Extension array for upgrades
+
 wfLoadExtension( 'Cite' );
 wfLoadExtension( 'CiteThisPage' );
 wfLoadExtension( 'ConfirmEdit' );
@@ -12,13 +14,16 @@ wfLoadExtension( 'Gadgets' );
 wfLoadExtension( 'ImageMap' );
 wfLoadExtension( 'InputBox' );
 wfLoadExtension( 'Interwiki' );
-wfLoadExtension( 'ParserFunctions' );
 wfLoadExtension( 'Renameuser' );
 wfLoadExtension( 'SpamBlacklist' );
 wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 wfLoadExtension( 'TitleBlacklist' );
 wfLoadExtension( 'VisualEditor' );
 wfLoadExtension( 'WikiEditor' );
+
+wfLoadExtension( 'ParserFunctions' );
+$wgPFEnableStringFunctions = true;
+$wgPFStringLengthLimit = 30000;
 
 wfLoadExtension( 'Scribunto' );
 $wgScribuntoDefaultEngine = 'luastandalone';
@@ -55,4 +60,51 @@ $wgCaptchaQuestions[] = array (
 );
 
 $wgCaptchaTriggers['addurl'] = false;
+
+wfLoadExtension( 'AntiSpoof' );
+wfLoadExtension( 'CharInsert' );
+wfLoadExtension( 'CheckUser' );
+wfLoadExtension( 'Editcount' );
+wfLoadExtension( 'PageImages' );
+
+wfLoadExtension( 'TorBlock' );
+$wgGroupPermissions['user']['torunblocked'] = false;
+
+wfLoadExtension( 'LocalisationUpdate' );
+$wgLocalisationUpdateDirectory = "/home/sfwiki/cache";
+
+wfLoadExtension( 'DeleteBatch' );
+wfLoadExtension( 'DisableAccount' );
+wfLoadExtension( 'Disambiguator' );
+wfLoadExtension( 'JsonConfig' );
+wfLoadExtension( 'LabeledSectionTransclusion' );
+
+//wfLoadExtension( 'MediaFunctions' );
+require_once "$IP/extensions/MediaFunctions/MediaFunctions.php";
+
+wfLoadExtension( 'Nuke' );
+wfLoadExtension( 'Patroller' );
+wfLoadExtension( 'PdfHandler' );
+wfLoadExtension( 'Poem' );
+wfLoadExtension( 'RegexFunctions' );
+wfLoadExtension( 'Tabs' );
+wfLoadExtension( 'WikiTextLoggedInOut' );
+
+wfLoadExtension( 'Graph' );
+$wgEnableGraphParserTag = true;
+
+wfLoadExtension( 'NativeSvgHandler' );
+$wgNativeSvgHandlerEnableLinks = true;
+
+wfLoadExtension( 'TimedMediaHandler' );
+$wgEnableTranscode = true;
+$wgTranscodeBackgroundTimeLimit = 60 * 5;
+$wgFFmpegLocation = '/home/uesp/ffmpeg/ffmpeg';
+
+// Needs messages setup
+// wfLoadExtension( 'UploadWizard' );
+
+
+
+
 
