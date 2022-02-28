@@ -18,7 +18,7 @@ wfLoadExtension( 'Renameuser' );
 wfLoadExtension( 'SpamBlacklist' );
 wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 wfLoadExtension( 'TitleBlacklist' );
-wfLoadExtension( 'VisualEditor' );
+// wfLoadExtension( 'VisualEditor' );		//Disabled until we can get it to work
 wfLoadExtension( 'WikiEditor' );
 
 wfLoadExtension( 'ParserFunctions' );
@@ -104,6 +104,7 @@ $wgFFmpegLocation = '/home/uesp/ffmpeg/ffmpeg';
 // Needs messages setup
 // wfLoadExtension( 'UploadWizard' );
 
+require_once( "$IP/extensions/MetaTemplate/MetaTemplate.php" );
 
 
 

@@ -23,7 +23,7 @@ $wgGroupPermissions['*']['map'] = true;
 
 $wgGroupPermissions['abuseeditor']['abusefilter-modify'] = true;
 $wgGroupPermissions['abuseeditor']['abusefilter-modify-restricted'] = true;
-$wgGroupPermissions['abuseeditor']['abusefilter-private'] = true;
+$wgGroupPermissions['abuseeditor']['abusefilter-privatedetails'] = true;
 $wgGroupPermissions['abuseeditor']['abusefilter-revert'] = true;
 
 $wgGroupPermissions['autoconfirmed']['move'] = true;
@@ -54,7 +54,7 @@ $wgGroupPermissions['patroller']['tboverride'] = true;
 
 $wgGroupPermissions['sysop']['abusefilter-modify'] = true;
 $wgGroupPermissions['sysop']['abusefilter-modify-restricted'] = true;
-$wgGroupPermissions['sysop']['abusefilter-private'] = true;
+$wgGroupPermissions['sysop']['abusefilter-privatedetails'] = true;
 $wgGroupPermissions['sysop']['abusefilter-revert'] = true;
 $wgGroupPermissions['sysop']['checkuser'] = true;
 $wgGroupPermissions['sysop']['checkuser-log'] = true;
