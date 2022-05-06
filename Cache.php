@@ -9,7 +9,7 @@
 
 ## Shared memory settings
 $wgMainCacheType = CACHE_MEMCACHED;
-$wgMemCachedServers = [ $UESP_SERVER_MEMCACHED . ':11000' ];
+$wgMemCachedServers = [ $SFWIKI_SERVER_MEMCACHED . ':11000' ];
 $wgObjectCacheSessionExpiry = 100000;
 $wgSessionsInObjectCache = true;
 

@@ -7,7 +7,7 @@
 # It is included by LocalSettings.php.
 #
 
-$wgSitename = "the Starfield Wiki";
+$wgSitename = "The Starfield Wiki";
 $wgMetaNamespace = "Starfield";
 
 $wgScriptPath = "/w";
