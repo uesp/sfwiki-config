@@ -101,9 +101,12 @@ $wgEnableTranscode = true;
 $wgTranscodeBackgroundTimeLimit = 60 * 5;
 $wgFFmpegLocation = '/home/uesp/ffmpeg/ffmpeg';
 
+wfLoadExtension( 'TemplateStyles' );
+
 // Needs messages setup
 // wfLoadExtension( 'UploadWizard' );
 
+	// Needs Testing, doesn't fully work
 require_once( "$IP/extensions/MetaTemplate/MetaTemplate.php" );
 
 
