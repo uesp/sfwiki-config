@@ -77,3 +77,6 @@ $wgAutoConfirmCount = 10;
 $wgUpgradeKey = $sfWikiSecretKey;
 $wgSecretKey = $sfWikiUpgradeKey;
 
+$wgGalleryOptions['imageWidth'] = 200;
+$wgGalleryOptions['imageHeight'] = 200;
+$wgGalleryOptions['mode'] = 'packed';
