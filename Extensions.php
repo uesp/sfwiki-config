@@ -108,7 +108,10 @@ wfLoadExtension( 'TemplateStyles' );
 
 	// Needs Testing, doesn't fully work
 require_once( "$IP/extensions/MetaTemplate/MetaTemplate.php" );
+wfLoadExtension( 'UespBreadCrumb' );
 
+wfLoadExtension( 'GTag' );
+$wgGTagAnalyticsId = 'G-HLRGHY4G65';
 
 
 
