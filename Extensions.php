@@ -21,6 +21,9 @@ wfLoadExtension( 'TitleBlacklist' );
 // wfLoadExtension( 'VisualEditor' );		//Disabled until we can get it to work
 wfLoadExtension( 'WikiEditor' );
 
+wfLoadSkin( 'MinervaNeue' );
+wfLoadExtension( 'SFWikiCustomCode' );
+
 wfLoadExtension( 'ParserFunctions' );
 $wgPFEnableStringFunctions = true;
 $wgPFStringLengthLimit = 30000;
@@ -113,7 +116,6 @@ wfLoadExtension( 'UespBreadCrumb' );
 wfLoadExtension( 'GTag' );
 $wgGTagAnalyticsId = 'G-HLRGHY4G65';
 
-
-
+wfLoadExtension( 'EmbedVideo' );
 
 

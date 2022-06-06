@@ -7,6 +7,8 @@
 #
 
 wfLoadExtension( 'MobileFrontend' );
-$wgMFDefaultSkinClass = 'SkinVector';
+//$wgMFDefaultSkinClass = 'SkinVector';
+$wgMFDefaultSkinClass = 'MinervaNeue';
+$wgMFCollapseSectionsByDefault = false;
 
 
