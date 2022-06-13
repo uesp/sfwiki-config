@@ -118,4 +118,5 @@ $wgGTagAnalyticsId = 'G-HLRGHY4G65';
 
 wfLoadExtension( 'EmbedVideo' );
 
-
+wfLoadExtension( "PageSpeedLog" );
+$wgPageSpeedLogFile = "/var/log/httpd/sfwiki-pagespeed.log";
