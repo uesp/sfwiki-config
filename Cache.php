@@ -20,3 +20,7 @@ $wgSquidServers = array($UESP_SERVER_SQUID1);
 $wgUseSquid = true;
 $wgUsePrivateIPs = true;
 
+$wgUseCdn = true;
+$wgCdnServers = array();
+$wgCdnServers[] = $UESP_SERVER_SQUID1;
+
