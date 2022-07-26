@@ -23,7 +23,7 @@ $wgLogos = [ '1x' => "https://images.starfieldwiki.net/6/60/Wiki_Logo.png" ];
 if ($sfwikiIsDev)
 {
 	$wgServer = "https://dev.starfieldwiki.net";
-	$wgLogos = [ '1x' => "https://dev.starfieldwiki.net/images/6/60/Wiki_Logo.png" ];
+	$wgLogos = [ '1x' => "https://dev.starfieldwiki.net/w/images/6/60/Wiki_Logo.png" ];
 }
 
 
