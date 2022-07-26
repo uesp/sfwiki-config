@@ -26,38 +26,58 @@ $wgSharedTables[] = "actor";
 
 $sfWikiDBName = $sfWikiDB;
 
-$wgDBservers = array(
-		array(          # db1 - Write Master
-				'host' => $UESP_SERVER_DB1,
+if ($sfwikiIsDev)
+{
+	$wgDBname = "sfwiki_dev";
+	$sfWikiDBName = $wgDBname;
+	
+	$wgDBservers = array(
+		array(          # backup1 is the only dev wiki database
+				'host' => $UESP_SERVER_BACKUP1,
 				'dbname' => $sfWikiDBName,
 				'user' => $sfWikiUser,
 				'password' => $sfWikiPW,
 				'type' => "mysql",
 				'flag' => DBO_DEFAULT,
 				'load' => 1,
-		),
-		array(          # db2 - Primary Read
-				'host' => $UESP_SERVER_DB2,
+			),
+		);
+}
+else
+{
+	$wgDBservers = array(
+			array(          # db1 - Write Master
+					'host' => $UESP_SERVER_DB1,
+					'dbname' => $sfWikiDBName,
+					'user' => $sfWikiUser,
+					'password' => $sfWikiPW,
+					'type' => "mysql",
+					'flag' => DBO_DEFAULT,
+					'load' => 1,
+			),
+			array(          # db2 - Primary Read
+					'host' => $UESP_SERVER_DB2,
+					'dbname' => $sfWikiDBName,
+					'user' => $sfWikiUser,
+					'password' => $sfWikiPW,
+					'type' => "mysql",
+					'flag' => DBO_DEFAULT,
+					'load' => 10,
+					'max lag' => 1000,
+			)
+		);
+		
+	$sfWikiBackup1Db = 
+		array(          # backup1 - Backup Read
+				'host' => $UESP_SERVER_BACKUP1,
 				'dbname' => $sfWikiDBName,
 				'user' => $sfWikiUser,
 				'password' => $sfWikiPW,
 				'type' => "mysql",
 				'flag' => DBO_DEFAULT,
 				'load' => 10,
-				'max lag' => 1000,
-		)
-	);
-	
-$sfWikiBackup1Db = 
-	array(          # backup1 - Backup Read
-			'host' => $UESP_SERVER_BACKUP1,
-			'dbname' => $sfWikiDBName,
-			'user' => $sfWikiUser,
-			'password' => $sfWikiPW,
-			'type' => "mysql",
-			'flag' => DBO_DEFAULT,
-			'load' => 10,
-	);
-	
-	/* Don't include by default as backup lag can affect production servers */	
-//$wgDBservers[] = $sfWikiBackup1Db;
+		);
+		
+		/* Don't include by default as backup lag can affect production servers */	
+	//$wgDBservers[] = $sfWikiBackup1Db;
+}

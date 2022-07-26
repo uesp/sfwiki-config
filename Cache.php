@@ -9,18 +9,28 @@
 
 ## Shared memory settings
 $wgMainCacheType = CACHE_MEMCACHED;
-$wgMemCachedServers = [ $SFWIKI_SERVER_MEMCACHED . ':11000' ];
 $wgObjectCacheSessionExpiry = 100000;
 $wgSessionsInObjectCache = true;
 
-$wgCacheDirectory = "/home/sfwiki/cache/";
+if ($sfwikiIsDev)
+{
+	$wgCacheDirectory = "/home/sfwiki/cache/dev";
+	$wgMemCachedServers = array($UESP_SERVER_BACKUP1 . ":11000");
+	$wgCookiePrefix = "sfwiki_dev";
+}
+else
+{
+	$wgCacheDirectory = "/home/sfwiki/cache/";
+	$wgMemCachedServers = [ $SFWIKI_SERVER_MEMCACHED . ':11000' ];
+	
+	$wgSquidMaxage = 86400;
+	$wgSquidServers = array($UESP_SERVER_SQUID1);
+	$wgUseSquid = true;
+	
+	$wgUseCdn = true;
+	$wgCdnServers = array();
+	$wgCdnServers[] = $UESP_SERVER_SQUID1;
+}
 
-$wgSquidMaxage = 86400;
-$wgSquidServers = array($UESP_SERVER_SQUID1);
-$wgUseSquid = true;
 $wgUsePrivateIPs = true;
-
-$wgUseCdn = true;
-$wgCdnServers = array();
-$wgCdnServers[] = $UESP_SERVER_SQUID1;
 
