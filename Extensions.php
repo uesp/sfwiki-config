@@ -5,7 +5,73 @@
 # It is included by LocalSettings.php.
 #
 
-//TODO: Extension array for upgrades
+#
+# Keep this array updated as extensions are added or removed. It is currently only used when
+# upgrading MediaWiki in order to automatically upgrade extensions as needed.
+#
+#   EXTENSION_DIRECTORY => VALUE,
+#
+$UESP_EXT_DEFAULT = 0;		// Included with the MW extension
+$UESP_EXT_UPGRADE = 1;		// Upgrade with the uesp-getmwext script
+$UESP_EXT_OTHER = 2;		// Needs a manual upgrade
+$UESP_EXT_NONE = 3;			// Doesn't need an upgrade
+
+$UESP_EXTENSION_INFO = [
+		//"" => $UESP_EXT_UPGRADE,
+		"AbuseFilter" => $UESP_EXT_DEFAULT,
+		"AntiSpoof" => $UESP_EXT_DEFAULT,
+		"CharInsert" => $UESP_EXT_DEFAULT,
+		"CheckUser" => $UESP_EXT_UPGRADE,
+		"CirrusSearch" => $UESP_EXT_UPGRADE,
+		"Cite" => $UESP_EXT_DEFAULT,
+		"CiteThisPage" => $UESP_EXT_DEFAULT,
+		"ConfirmEdit" => $UESP_EXT_DEFAULT,
+		"DeleteBatch" => $UESP_EXT_UPGRADE,
+		"DisableAccount" => $UESP_EXT_UPGRADE,
+		"Disambiguator" => $UESP_EXT_UPGRADE,
+		"Editcount" => $UESP_EXT_UPGRADE,
+		"Elastica" => $UESP_EXT_UPGRADE,
+		"EmbedVideo" => $UESP_EXT_OTHER,
+		"Gadgets" => $UESP_EXT_DEFAULT,
+		"Graph" => $UESP_EXT_UPGRADE,
+		"GTag" => $UESP_EXT_OTHER,
+		"ImageMap" => $UESP_EXT_DEFAULT,
+		"InputBox" => $UESP_EXT_DEFAULT,
+		"Interwiki" => $UESP_EXT_DEFAULT,
+		"JsonConfig" => $UESP_EXT_UPGRADE,
+		"LabeledSectionTransclusion" => $UESP_EXT_UPGRADE,
+		"LocalisationUpdate" => $UESP_EXT_DEFAULT,
+		"MediaFunctions" => $UESP_EXT_UPGRADE,
+		"MetaTemplate" => $UESP_EXT_OTHER,
+		"MobileFrontend" => $UESP_EXT_UPGRADE,
+		"NativeSvgHandler" => $UESP_EXT_UPGRADE,
+		"Nuke" => $UESP_EXT_DEFAULT,
+		"PageImages" => $UESP_EXT_DEFAULT,
+		"PageSpeedLog" => $UESP_EXT_OTHER,
+		"ParserFunctions" => $UESP_EXT_DEFAULT,
+		"ParserHelper" => $UESP_EXT_OTHER,
+		"Patroller" => $UESP_EXT_UPGRADE,
+		"PdfHandler" => $UESP_EXT_DEFAULT,
+		"Poem" => $UESP_EXT_DEFAULT,
+		"RegexFunctions" => $UESP_EXT_UPGRADE,
+		"Riven" => $UESP_EXT_OTHER,
+		"Renameuser" => $UESP_EXT_DEFAULT,
+		"Scribunto" => $UESP_EXT_DEFAULT,
+		"SFWikiCustomCode" => $UESP_EXT_OTHER,
+		"SpamBlacklist" => $UESP_EXT_DEFAULT,
+		"SyntaxHighlight_GeSHi" => $UESP_EXT_DEFAULT,
+		"Tabs" => $UESP_EXT_UPGRADE,
+		"TemplateStyles" => $UESP_EXT_UPGRADE,
+		"TimedMediaHandler" => $UESP_EXT_UPGRADE,
+		"TitleBlacklist" => $UESP_EXT_DEFAULT,
+		"TorBlock" => $UESP_EXT_UPGRADE,
+		"UespBreadCrumb" => $UESP_EXT_OTHER, 
+		//"VisualEditor" => $UESP_EXT_UPGRADE,	//Not working?
+		"WikiEditor" => $UESP_EXT_DEFAULT,
+		"WikiTextLoggedInOut" => $UESP_EXT_UPGRADE,
+];
+
+if ($UESP_UPGRADING_MW == 1) return;
 
 wfLoadExtension( 'Cite' );
 wfLoadExtension( 'CiteThisPage' );
@@ -82,8 +148,7 @@ wfLoadExtension( 'Disambiguator' );
 wfLoadExtension( 'JsonConfig' );
 wfLoadExtension( 'LabeledSectionTransclusion' );
 
-//wfLoadExtension( 'MediaFunctions' );
-require_once "$IP/extensions/MediaFunctions/MediaFunctions.php";
+wfLoadExtension( 'MediaFunctions' );
 
 wfLoadExtension( 'Nuke' );
 wfLoadExtension( 'Patroller' );

@@ -8,6 +8,7 @@
 $wgDebugComments = true;
 $wgDebugToolbar = true;
 $wgUseSquid = false;
+$wgUseCdn = false;
 $wgShowSQLErrors = true;
 $wgShowExceptionDetails = true;
 $wgDevelopmentWarnings = true;

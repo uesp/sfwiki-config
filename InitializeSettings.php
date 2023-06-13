@@ -38,8 +38,9 @@ if (php_sapi_name() == "cli") {
 	if ($sfwikiArgs["sfwikidev"])
 	{
 		$sfwikiIsDev = true;
-		fwrite(STDERR, "\tForcing SFWiki dev wiki!\n");
 	}
 	
 }
+
+if ($sfwikiIsDev) fwrite(STDERR, "\tForcing SFWiki dev wiki!\n");
 
