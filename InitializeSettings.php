@@ -9,7 +9,11 @@
 $sfwikiIsDev = false;
 if ($_SERVER['HTTP_HOST'] == "dev.starfieldwiki.net" || $_SERVER['HTTP_HOST'] == "dev.m.starfieldwiki.net") $sfwikiIsDev = true;
 
+$curDir = getcwd();
+if (substr($curDir, 0, 21) == "/home/sfwiki/dev/www/") $sfwikiIsDev = true;
+
 # Check command line arguments (this only parses long options related to the SFWiki).
+# In MW 1.38 it doesn't let you use unknown command line parameters (results in an error).
 if (php_sapi_name() == "cli") {
 	
 	function sfwikiParseCommandArgs()
