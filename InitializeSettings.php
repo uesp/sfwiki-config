@@ -8,6 +8,7 @@
 
 $sfwikiIsDev = false;
 if ($_SERVER['HTTP_HOST'] == "dev.starfieldwiki.net" || $_SERVER['HTTP_HOST'] == "dev.m.starfieldwiki.net") $sfwikiIsDev = true;
+if ($_SERVER['HTTP_HOST'] == "dev.sfwiki.net" || $_SERVER['HTTP_HOST'] == "dev.m.sfwiki.net") $sfwikiIsDev = true;
 
 $curDir = getcwd();
 if (substr($curDir, 0, 21) == "/home/sfwiki/dev/www/") $sfwikiIsDev = true;
