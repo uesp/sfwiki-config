@@ -8,7 +8,7 @@
 #
 
 $wgSitename = "The Starfield Wiki";
-$wgMetaNamespace = "Starfield";
+$wgMetaNamespace = "StarfieldWiki";
 
 $wgScriptPath = "/w";
 $wgServer = "https://starfieldwiki.net";

@@ -8,7 +8,7 @@
 
 
 $wgExtraNamespaces = array(
-	100 => 'StarfieldWiki',     101 => 'StarfieldWiki_talk',
+	100 => 'Starfield',         101 => 'Starfield_talk',
 	102 => 'Lore',              103 => 'Lore_talk',
 	104 => 'General',           105 => 'General_talk'
 );
