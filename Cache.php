@@ -20,7 +20,7 @@ if ($sfwikiIsDev)
 }
 else
 {
-	$wgCacheDirectory = "/home/sfwiki/cache/";
+	$wgCacheDirectory = "/home/sfwiki/cache$sfwikiLanguageSuffix/";
 	$wgMemCachedServers = [ $SFWIKI_SERVER_MEMCACHED . ':11000' ];
 	
 	$wgSquidMaxage = 86400;

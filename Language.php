@@ -6,6 +6,17 @@
 # It is included by LocalSettings.php.
 #
 
-// No specific language settings for the Starfield wiki yet.
+//Most language settings are in InitializeSettings.php
 
-$wgLanguageCode = "en";
+# Special settings for translation wikis
+if ($sfwikiLanguageSuffix != "")
+{
+	$wgUseSharedUploads = true;
+	$wgSharedUploadPath = '//images.starfieldwiki.net';
+	$wgSharedUploadDirectory = '/home/sfwiki/www/w/images/';
+	$wgHashedSharedUploadDirectory = true;
+	$wgUploadNavigationUrl = "//starfieldwiki.net/wiki/Special:Upload";
+	$wgUploadMissingFileUrl= "//starfieldwiki.net/wiki/Special:Upload";
+	$wgRepositoryBaseUrl = "https://starfieldwiki.net/wiki/File:";
+}
+

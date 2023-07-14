@@ -8,7 +8,7 @@
 
 
 $wgExtraNamespaces = array(
-	100 => 'StarfieldWiki',     101 => 'StarfieldWiki_talk',
+	100 => 'Starfield',         101 => 'Starfield_talk',
 	102 => 'Lore',              103 => 'Lore_talk',
 	104 => 'General',           105 => 'General_talk'
 );
@@ -35,7 +35,7 @@ $wgNamespacesToBeSearchedDefault = array(
 );
 
 $wgContentNamespaces = array(
-	NS_MAIN, NS_PROJECT, 102
+	NS_MAIN, NS_PROJECT, 100, 102, 104
 );
 
 $wgExtraSignatureNamespaces[] = NS_PROJECT;

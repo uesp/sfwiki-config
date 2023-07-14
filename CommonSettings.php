@@ -8,10 +8,13 @@
 #
 
 $wgSitename = "The Starfield Wiki";
-$wgMetaNamespace = "Starfield";
+$wgMetaNamespace = "StarfieldWiki";
+
+$wgEnableCanonicalServerLink = true;
+$wgCanonicalServer = "https://$wgLanguageCode.starfieldwiki.net";
+if ($wgLanguageCode == "en") $wgCanonicalServer = "https://starfieldwiki.net";
 
 $wgScriptPath = "/w";
-$wgServer = "https://starfieldwiki.net";
 $wgAjaxSearch = true;
 $wgAllowUserCss = true;
 $wgAllowUserJs  = true;
@@ -22,7 +25,7 @@ $wgLogos = [ '1x' => "https://images.starfieldwiki.net/6/60/Wiki_Logo.png" ];
 
 if ($sfwikiIsDev)
 {
-	$wgServer = "https://dev.starfieldwiki.net";
+	//TODO: Language logo?
 	$wgLogos = [ '1x' => "https://dev.starfieldwiki.net/w/images/8/8b/Dev_Wiki_Logo.png" ];
 }
 

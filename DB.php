@@ -8,7 +8,7 @@
 
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBname = $sfWikiDB;
+$wgDBname = $sfWikiDB . $sfwikiLanguageSuffix;
 
 # $wgDBserver = $UESP_SERVER_DB1;
 # $wgDBuser = $sfWikiUser;
@@ -24,11 +24,11 @@ $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 # This has no effect unless $wgSharedDB is also set.
 $wgSharedTables[] = "actor";
 
-$sfWikiDBName = $sfWikiDB;
+$sfWikiDBName = $sfWikiDB . $sfwikiLanguageSuffix;
 
 if ($sfwikiIsDev)
 {
-	$wgDBname = "sfwiki_dev";
+	$wgDBname = "sfwiki_dev" . $sfwikiLanguageSuffix;
 	$sfWikiDBName = $wgDBname;
 	
 	$wgDBservers = array(
@@ -80,4 +80,16 @@ else
 		
 		/* Don't include by default as backup lag can affect production servers */	
 	//$wgDBservers[] = $sfWikiBackup1Db;
+}
+
+
+# Special settings for translation wikis
+$wgSharedDB = $sfWikiDB;
+$wgSharedPrefix = '';
+$wgSharedTables[] = 'ipblocks';
+$wgSharedTables[] = 'interwiki';
+
+if ($sfwikiLanguageSuffix != "")
+{
+	$wgLocalDatabases[] = $sfWikiDB;
 }
