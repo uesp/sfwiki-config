@@ -9,7 +9,6 @@
 
 $wgSitename = "The Starfield Wiki";
 $wgMetaNamespace = "StarfieldWiki";
-<<<<<<< HEAD
 
 $wgEnableCanonicalServerLink = true;
 $wgCanonicalServer = "https://$wgLanguageCode.starfieldwiki.net";
