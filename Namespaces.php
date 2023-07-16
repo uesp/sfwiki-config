@@ -14,10 +14,10 @@ $wgExtraNamespaces = array(
 );
 
 $wgNamespaceAliases = array(
-	'SF' => NS_PROJECT, 'SF_talk' => NS_PROJECT + 1,
-	'SFW' => 100,       'SFW_talk' => 101,
-	'LO' => 102,        'LO_talk' => 103,
-	'GE' => 104,        'GE_talk' => 105
+	'SFW' => NS_PROJECT, 'SFW_talk' => NS_PROJECT + 1,
+	'SF' => 100,         'SF_talk' => 101,
+	'LO' => 102,         'LO_talk' => 103,
+	'GE' => 104,         'GE_talk' => 105
 );
 
 $wgNamespacesWithSubpages = array(
