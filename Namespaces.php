@@ -8,9 +8,9 @@
 
 
 $wgExtraNamespaces = array(
-	100 => 'Starfield',         101 => 'Starfield_talk',
-	102 => 'Lore',              103 => 'Lore_talk',
-	104 => 'General',           105 => 'General_talk'
+	100 => 'Starfield', 101 => 'Starfield_talk',
+	102 => 'Lore',      103 => 'Lore_talk',
+	104 => 'General',   105 => 'General_talk'
 );
 
 $wgNamespaceAliases = array(
