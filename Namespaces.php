@@ -35,7 +35,8 @@ $wgNamespacesToBeSearchedDefault = array(
 );
 
 $wgContentNamespaces = array(
-	NS_MAIN, NS_PROJECT, 100, 102, 104
+	NS_MAIN, NS_PROJECT, 
+	100, 102, 104
 );
 
 $wgExtraSignatureNamespaces[] = NS_PROJECT;
