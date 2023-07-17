@@ -12,6 +12,8 @@ $wgMainCacheType = CACHE_MEMCACHED;
 $wgObjectCacheSessionExpiry = 100000;
 $wgSessionsInObjectCache = true;
 
+$wgCacheEpoch = 20230716102721;
+
 if ($sfwikiIsDev)
 {
 	$wgCacheDirectory = "/home/sfwiki/cache/dev";
