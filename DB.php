@@ -66,7 +66,13 @@ else
 					'max lag' => 1000,
 			)
 		);
-		
+	
+		// Special case where we want to disable the read DB server
+	if ($UESP_SERVER_DBWRITE == $UESP_SERVER_DBREAD)
+	{
+		unset($wgDBservers[1]);
+	}
+	
 	$sfWikiBackup1Db = 
 		array(          # backup1 - Backup Read
 				'host' => $UESP_SERVER_BACKUP1,
