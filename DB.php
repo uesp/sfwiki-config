@@ -20,10 +20,6 @@ $wgDBprefix = "";
 # MySQL table options to use during installation or update
 $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 
-# Shared database table
-# This has no effect unless $wgSharedDB is also set.
-$wgSharedTables[] = "actor";
-
 $sfWikiDBName = $sfWikiDB . $sfwikiLanguageSuffix;
 
 if ($sfwikiIsDev)
@@ -86,14 +82,15 @@ else
 		
 		/* Don't include by default as backup lag can affect production servers */	
 	//$wgDBservers[] = $sfWikiBackup1Db;
+	
+	$wgSharedTables[] = "actor";
+	
+		# Special settings for translation wikis
+	$wgSharedDB = $sfWikiDB;
+	$wgSharedPrefix = '';
+	$wgSharedTables[] = 'ipblocks';
+	$wgSharedTables[] = 'interwiki';
 }
-
-
-# Special settings for translation wikis
-$wgSharedDB = $sfWikiDB;
-$wgSharedPrefix = '';
-$wgSharedTables[] = 'ipblocks';
-$wgSharedTables[] = 'interwiki';
 
 if ($sfwikiLanguageSuffix != "")
 {

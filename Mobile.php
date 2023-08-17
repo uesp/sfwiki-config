@@ -10,5 +10,6 @@ wfLoadExtension( 'MobileFrontend' );
 //$wgMFDefaultSkinClass = 'SkinVector';
 $wgMFDefaultSkinClass = 'MinervaNeue';
 $wgMFCollapseSectionsByDefault = false;
+$wgMFSiteStylesRenderBlocking = true;
 
 
