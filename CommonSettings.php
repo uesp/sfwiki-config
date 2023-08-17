@@ -7,7 +7,7 @@
 # It is included by LocalSettings.php.
 #
 
-$wgSitename = "The Starfield Wiki";
+$wgSitename = "Starfield Wiki";
 $wgMetaNamespace = "StarfieldWiki";
 
 $wgEnableCanonicalServerLink = true;
