@@ -83,11 +83,10 @@ else
 		/* Don't include by default as backup lag can affect production servers */	
 	//$wgDBservers[] = $sfWikiBackup1Db;
 	
-	$wgSharedTables[] = "actor";
-	
 		# Special settings for translation wikis
 	$wgSharedDB = $sfWikiDB;
 	$wgSharedPrefix = '';
+	$wgSharedTables[] = "actor";
 	$wgSharedTables[] = 'ipblocks';
 	$wgSharedTables[] = 'interwiki';
 }

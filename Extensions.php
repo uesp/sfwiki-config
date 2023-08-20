@@ -158,8 +158,8 @@ wfLoadExtension( 'RegexFunctions' );
 wfLoadExtension( 'Tabs' );
 wfLoadExtension( 'WikiTextLoggedInOut' );
 
-wfLoadExtension( 'Graph' );
-$wgEnableGraphParserTag = true;
+//wfLoadExtension( 'Graph' );
+//$wgEnableGraphParserTag = true;
 
 wfLoadExtension( 'NativeSvgHandler' );
 $wgNativeSvgHandlerEnableLinks = true;
