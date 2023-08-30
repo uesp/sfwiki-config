@@ -52,6 +52,9 @@ array_push($wgFileExtensions, 'ogg', 'zip', 'bmp', 'pcx', 'tga', 'svg', 'webm', 
 
 $wgUseInstantCommons = false;
 
+$wgCookieDomain = ".starfieldwiki.net";
+$wgCookiePrefix = "sfwiki"; # Don't change as it affects the session name used
+
 $wgPingback = true;
 
 $wgShellLocale = "en_US.utf8";
