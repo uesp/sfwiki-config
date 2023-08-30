@@ -78,3 +78,13 @@ $wgAPIModules['createaccount'] = 'ApiDisabled';
 # Restrict viewing of renamed users to those with permission to rename
 $wgLogRestrictions['renameuser'] = 'renameuser';
 
+# Map permissions
+$wgGroupPermissions['*']['mapedit'] = false;
+$wgGroupPermissions['*']['mapadmin'] = false;
+$wgGroupPermissions['cartographer']['map'] = true;
+$wgGroupPermissions['cartographer']['mapedit'] = true;
+$wgGroupPermissions['cartographer']['esomapedit'] = true;
+$wgGroupPermissions['cartographer']['trmapedit'] = true;
+$wgGroupPermissions['mapadmin']['mapadmin'] = true;
+
+
