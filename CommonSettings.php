@@ -60,8 +60,8 @@ $wgPingback = true;
 $wgShellLocale = "en_US.utf8";
 $wgLanguageCode = "en";
 
-# Changing this will log out all existing sessions.
-$wgAuthenticationTokenVersion = "1";
+# Changing this will log out all existing sessions and prevent custom logins/apps from working.
+# $wgAuthenticationTokenVersion = "1";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
