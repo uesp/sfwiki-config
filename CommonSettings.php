@@ -22,12 +22,18 @@ $wgArticlePath  = "/wiki/$1";
 $wgResourceBasePath = $wgScriptPath;
 $wgAllowSiteCSSOnRestrictedPages = true;
 
-$wgLogos = [ '1x' => "https://images.starfieldwiki.net/6/60/Wiki_Logo.png" ];
+$wgLogos = [
+	'1x' => "https://images.starfieldwiki.net/6/60/Wiki_Logo.png",
+	'svg' => "https://images.starfieldwiki.net/7/72/Main_logo_white.svg"
+];
 
 if ($sfwikiIsDev)
 {
 	//TODO: Language logo?
-	$wgLogos = [ '1x' => "https://dev.starfieldwiki.net/w/images/8/8b/Dev_Wiki_Logo.png" ];
+	$wgLogos = [
+		'1x' => "https://dev.starfieldwiki.net/w/images/8/8b/Dev_Wiki_Logo.png",
+		'svg' => "https://dev.starfieldwiki.net/w/images/3/31/Main_logo_dev.svg"
+	];
 }
 
 
