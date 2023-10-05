@@ -174,8 +174,6 @@ wfLoadExtension( 'TemplateStyles' );
 // Needs messages setup
 // wfLoadExtension( 'UploadWizard' );
 
-	// Needs Testing, doesn't fully work
-require_once( "$IP/extensions/MetaTemplate/MetaTemplate.php" );
 wfLoadExtension( 'UespBreadCrumb' );
 
 wfLoadExtension( 'GTag' );
@@ -187,5 +185,5 @@ wfLoadExtension( "PageSpeedLog" );
 $wgPageSpeedLogFile = "/var/log/httpd/sfwiki-pagespeed.log";
 
 wfLoadExtension( 'ParserHelper' );
+wfLoadExtension( 'MetaTemplate' );
 wfLoadExtension( 'Riven' );
-
