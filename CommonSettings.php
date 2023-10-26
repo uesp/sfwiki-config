@@ -21,6 +21,7 @@ $wgAllowUserJs  = true;
 $wgArticlePath  = "/wiki/$1";
 $wgResourceBasePath = $wgScriptPath;
 $wgAllowSiteCSSOnRestrictedPages = true;
+$wgExpensiveParserFunctionLimit = 1000;
 
 $wgLogos = [
 	'1x' => "https://images.starfieldwiki.net/6/60/Wiki_Logo.png",
