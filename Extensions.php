@@ -182,6 +182,123 @@ wfLoadExtension( 'TemplateStyles' );
 wfLoadExtension( 'UploadWizard' );
 $wgUploadWizardConfig['uwLanguages'] = array( 'en' => 'English' );
 $wgUploadWizardConfig['tutorial']= [ 'skip' => true ];
+$wgUploadWizardConfig['enableCategoryCheck'] = false;
+$wgUploadWizardConfig['minAuthorLength'] = 0;
+$wgUploadWizardConfig['minSourceLength'] = 0;
+$wgUploadWizardConfig['minDescriptionLength'] = 0;
+$wgUploadWizardConfig['defaults']['description'] = 'Uploaded by UploadWizard';
+$wgUploadWizardConfig['licensing']['ownWork']['defaults'] = 'cc-by-sa-2.5';
+$wgUploadWizardConfig['licensing']['thirdParty']['defaults'] = 'cc-by-sa-2.5';
+//$wgUploadWizardConfig['licensing']['ownWork']['template'] = 'p1';
+//$wgUploadWizardConfig['licensing']['thirdParty']['template'] = 'p1';
+
+$wgMessagesDirs['UploadWizard'] = array(
+		"$IP/extensions/UploadWizard/i18n",
+		"$IP/extensions/SFWikiCustomCode/uploadWizard-i18n"
+); 
+
+$wgUploadWizardConfig['licensing']['ownWork']['licenses'] = array(
+		'cc-by-sa-2.5', 
+		'cc-by-sa-3.0',
+		'cc-by-2.5',
+		'cc-by-sa-nc-2.5',
+		'gfdl',
+		'sfwiki-pd',
+		'sfwiki-usedwithpermission',
+		'sfwiki-screenshot',
+);
+
+$wgUploadWizardConfig['licensing']['thirdParty']['licenses'] = array(
+		'cc-by-sa-2.5', 
+		'cc-by-sa-3.0',
+		'cc-by-2.5',
+		'cc-by-sa-nc-2.5',
+		'gfdl',
+		'sfwiki-pd',
+		'sfwiki-usedwithpermission',
+		'sfwiki-screenshot',
+);
+
+$wgUploadWizardConfig['licensing']['thirdParty']['licenseGroups'] = array(
+		array(
+				'head' => 'mwe-upwiz-license-none-head',
+				'licenses' => array(
+						'sfwiki-none',
+						'sfwiki-dontknow',
+				)
+		),
+		array(
+				'head' => 'mwe-upwiz-license-publicdomain-head',
+				'licenses' => array(
+						'sfwiki-pd',
+				)
+		),
+		array(
+				'head' => 'mwe-upwiz-license-cc-head',
+				'licenses' => array(
+						'cc-by-sa-2.5',
+						'cc-by-sa-3.0',
+						'cc-by-2.5',
+						'cc-by-sa-nc-2.5',
+						'gfdl',
+						'sfwiki-screenshot',
+				)
+		),
+		array(
+				'head' => 'mwe-upwiz-license-nonfree-head',
+				'licenses' => array(
+						'sfwiki-usedwithpermission',
+				)
+		),
+);
+
+$wgUploadWizardConfig['licenses']['sfwiki-none'] = array(
+		'msg' => 'mwe-upwiz-license-sfwiki-none',
+		'templates' => array( 'nolicense' ),
+);
+$wgUploadWizardConfig['licenses']['sfwiki-screenshot'] = array(
+		'msg' => 'mwe-upwiz-license-sfwiki-screenshot',
+		'templates' => array( 'sfwimage' ),
+);
+$wgUploadWizardConfig['licenses']['sfwiki-dontknow'] = array(
+		'msg' => 'mwe-upwiz-license-sfwiki-dontknow',
+		'templates' => array( 'nolicense' ),
+);
+$wgUploadWizardConfig['licenses']['sfwiki-pd'] = array(
+		'msg' => 'mwe-upwiz-license-sfwiki-pd',
+		'templates' => array( 'publicdomain' ),
+		'icons' => array( 'cc-zero' )
+);
+$wgUploadWizardConfig['licenses']['cc-by-sa-2.5'] = array(
+		'msg' => 'mwe-upwiz-license-cc-by-sa-2.5',
+		'templates' => array( 'cc-by-sa-2.5' ),
+		'icons' => array( 'cc-by', 'cc-sa' )
+);
+$wgUploadWizardConfig['licenses']['sfwiki-usedwithpermission'] = array(
+		'msg' => 'mwe-upwiz-license-sfwiki-usedwithpermission',
+		'templates' => array( 'usedwithpermission' ),
+);
+
+$wgResourceModules['ext.uploadWizardSfWiki']['messages'] = array(
+		"mwe-upwiz-source-ownwork-assert-cc-by-sa-2.5",
+		"mwe-upwiz-source-ownwork-cc-by-sa-2.5-explain",
+		"mwe-upwiz-license-sfwiki-pd",
+		"mwe-upwiz-license-sfwiki-usedwithpermission",
+		"mwe-upwiz-license-sfwiki-none",
+		"mwe-upwiz-license-sfwiki-dontknow",
+		"mwe-upwiz-license-sfwiki-screenshot",
+		"mwe-upwiz-license-publicdomain-head",
+		"mwe-upwiz-license-nonfree-head",
+		"mwe-upwiz-license-screenshots-head",
+);
+
+/* TODO: Only need to load for the Special:UploadWizard page */
+$wgHooks['BeforePageDisplay'][] = 'SFWikiUploadWizard_beforePageDisplay';
+
+function SFWikiUploadWizard_beforePageDisplay($out, $skin)
+{
+	$out->addModules( 'ext.uploadWizardSfWiki' );
+}
 
 wfLoadExtension( 'UespBreadCrumb' );
 
