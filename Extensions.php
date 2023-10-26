@@ -88,6 +88,13 @@ wfLoadExtension( 'TitleBlacklist' );
 wfLoadExtension( 'WikiEditor' );
 
 wfLoadSkin( 'MinervaNeue' );
+wfLoadSkin( 'DarkVector' );
+
+if ($sfwikiIsDev)
+{
+	wfLoadSkin( 'SFWikiDarkVector' );
+}
+
 wfLoadExtension( 'SFWikiCustomCode' );
 
 wfLoadExtension( 'ParserFunctions' );
@@ -172,7 +179,9 @@ $wgFFmpegLocation = '/home/uesp/ffmpeg/ffmpeg';
 wfLoadExtension( 'TemplateStyles' );
 
 // Needs messages setup
-// wfLoadExtension( 'UploadWizard' );
+wfLoadExtension( 'UploadWizard' );
+$wgUploadWizardConfig['uwLanguages'] = array( 'en' => 'English' );
+$wgUploadWizardConfig['tutorial']= [ 'skip' => true ];
 
 	// Needs Testing, doesn't fully work
 require_once( "$IP/extensions/MetaTemplate/MetaTemplate.php" );

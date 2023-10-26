@@ -83,5 +83,5 @@ if (php_sapi_name() == "cli") {
 	
 }
 
-if ($sfwikiIsDev) fwrite(STDERR, "\tForcing SFWiki dev wiki!\n");
+if ($sfwikiIsDev && defined('STDERR')) fwrite(STDERR, "\tForcing SFWiki dev wiki!\n");
 
