@@ -206,6 +206,7 @@ $wgUploadWizardConfig['licensing']['ownWork']['licenses'] = array(
 		'sfwiki-pd',
 		'sfwiki-usedwithpermission',
 		'sfwiki-screenshot',
+		'sfwiki-image',
 );
 
 $wgUploadWizardConfig['licensing']['thirdParty']['licenses'] = array(
@@ -217,6 +218,7 @@ $wgUploadWizardConfig['licensing']['thirdParty']['licenses'] = array(
 		'sfwiki-pd',
 		'sfwiki-usedwithpermission',
 		'sfwiki-screenshot',
+		'sfwiki-image',
 );
 
 $wgUploadWizardConfig['licensing']['thirdParty']['licenseGroups'] = array(
@@ -242,6 +244,7 @@ $wgUploadWizardConfig['licensing']['thirdParty']['licenseGroups'] = array(
 						'cc-by-sa-nc-2.5',
 						'gfdl',
 						'sfwiki-screenshot',
+						'sfwiki-image',
 				)
 		),
 		array(
@@ -259,6 +262,10 @@ $wgUploadWizardConfig['licenses']['sfwiki-none'] = array(
 $wgUploadWizardConfig['licenses']['sfwiki-screenshot'] = array(
 		'msg' => 'mwe-upwiz-license-sfwiki-screenshot',
 		'templates' => array( 'sfwimage' ),
+);
+$wgUploadWizardConfig['licenses']['sfwiki-image'] = array(
+		'msg' => 'mwe-upwiz-license-sfwiki-image',
+		'templates' => array( 'sfimage' ),
 );
 $wgUploadWizardConfig['licenses']['sfwiki-dontknow'] = array(
 		'msg' => 'mwe-upwiz-license-sfwiki-dontknow',
@@ -287,6 +294,7 @@ $wgResourceModules['ext.uploadWizardSfWiki']['messages'] = array(
 		"mwe-upwiz-license-sfwiki-none",
 		"mwe-upwiz-license-sfwiki-dontknow",
 		"mwe-upwiz-license-sfwiki-screenshot",
+		"mwe-upwiz-license-sfwiki-image",
 		"mwe-upwiz-license-publicdomain-head",
 		"mwe-upwiz-license-nonfree-head",
 		"mwe-upwiz-license-screenshots-head",
