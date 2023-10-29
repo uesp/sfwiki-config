@@ -281,6 +281,11 @@ $wgUploadWizardConfig['licenses']['cc-by-sa-2.5'] = array(
 		'templates' => array( 'cc-by-sa-2.5' ),
 		'icons' => array( 'cc-by', 'cc-sa' )
 );
+$wgUploadWizardConfig['licenses']['cc-by-sa-nc-2.5'] = array(
+		'msg' => 'mwe-upwiz-license-cc-by-sa-nc-2.5',
+		'templates' => array( 'cc-by-sa-nc-2.5' ),
+		'icons' => array( 'cc-by', 'cc-sa' )
+);
 $wgUploadWizardConfig['licenses']['sfwiki-usedwithpermission'] = array(
 		'msg' => 'mwe-upwiz-license-sfwiki-usedwithpermission',
 		'templates' => array( 'usedwithpermission' ),
