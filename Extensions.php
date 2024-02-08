@@ -144,6 +144,7 @@ wfLoadExtension( 'Editcount' );
 wfLoadExtension( 'PageImages' );
 
 wfLoadExtension( 'TorBlock' );
+$wgTorOnionooCA = false; // Current certificate isn't validating correctly, though it hasn't changed in 11 years.
 $wgGroupPermissions['user']['torunblocked'] = false;
 
 wfLoadExtension( 'LocalisationUpdate' );
