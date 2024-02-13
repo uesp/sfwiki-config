@@ -145,6 +145,7 @@ wfLoadExtension( 'PageImages' );
 
 wfLoadExtension( 'TorBlock' );
 $wgGroupPermissions['user']['torunblocked'] = false;
+$wgTorOnionooCA = false;
 
 wfLoadExtension( 'LocalisationUpdate' );
 $wgLocalisationUpdateDirectory = "/home/sfwiki/cache";
