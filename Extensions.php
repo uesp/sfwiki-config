@@ -66,7 +66,7 @@ $UESP_EXTENSION_INFO = [
 		"TitleBlacklist" => $UESP_EXT_DEFAULT,
 		"TorBlock" => $UESP_EXT_UPGRADE,
 		"UespBreadCrumb" => $UESP_EXT_OTHER, 
-		//"VisualEditor" => $UESP_EXT_UPGRADE,	//Not working?
+		"VisualEditor" => $UESP_EXT_UPGRADE,
 		"WikiEditor" => $UESP_EXT_DEFAULT,
 		"WikiTextLoggedInOut" => $UESP_EXT_UPGRADE,
 ];
@@ -84,8 +84,24 @@ wfLoadExtension( 'Renameuser' );
 wfLoadExtension( 'SpamBlacklist' );
 wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 wfLoadExtension( 'TitleBlacklist' );
-// wfLoadExtension( 'VisualEditor' );		//Disabled until we can get it to work
+
 wfLoadExtension( 'WikiEditor' );
+
+wfLoadExtension( 'Parsoid', "$IP/vendor/wikimedia/parsoid/extension.json" );
+wfLoadExtension( 'VisualEditor' );
+$wgVisualEditorAvailableNamespaces = [
+		'Project' => true,
+		'File' => false,
+		'General' => true,
+		'Lore' => true,
+		'Starfield' => true,
+		'Starfield_Mod' => true,
+		'Merchandise' => true,
+];
+
+$wgVirtualRestConfig['modules']['parsoid'] = array(
+	'url' => "http://localhost/w/rest.php",
+);
 
 wfLoadSkin( 'MinervaNeue' );
 wfLoadSkin( 'DarkVector' );
@@ -114,7 +130,6 @@ $wgGroupPermissions['abuseeditor']['abusefilter-modify'] = true;
 $wgGroupPermissions['abuseeditor']['abusefilter-modify-restricted'] = true;
 $wgGroupPermissions['abuseeditor']['abusefilter-privatedetails'] = true;
 $wgGroupPermissions['abuseeditor']['abusefilter-revert'] = true;
-
 wfLoadExtensions([ 'ConfirmEdit', 'ConfirmEdit/QuestyCaptcha' ]);
 $wgCaptchaClass = 'QuestyCaptcha';
 
@@ -306,7 +321,7 @@ $wgResourceModules['ext.uploadWizardSfWiki']['messages'] = array(
 		"mwe-upwiz-license-screenshots-head",
 );
 
-/* TODO: Only need to load for the Special:UploadWizard page */
+// TODO: Only need to load for the Special:UploadWizard page
 $wgHooks['BeforePageDisplay'][] = 'SFWikiUploadWizard_beforePageDisplay';
 
 function SFWikiUploadWizard_beforePageDisplay($out, $skin)
