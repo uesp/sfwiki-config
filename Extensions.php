@@ -341,4 +341,5 @@ $wgPageSpeedLogFile = "/var/log/httpd/sfwiki-pagespeed.log";
 
 wfLoadExtension( 'ParserHelper' );
 wfLoadExtension( 'MetaTemplate' );
+wfLoadExtension( 'NSInfo' );
 wfLoadExtension( 'Riven' );
