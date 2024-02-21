@@ -87,6 +87,7 @@ wfLoadExtension( 'TitleBlacklist' );
 
 wfLoadExtension( 'WikiEditor' );
 
+/* VisualEditor doesn't work with MetaTemplate
 wfLoadExtension( 'Parsoid', "$IP/vendor/wikimedia/parsoid/extension.json" );
 wfLoadExtension( 'VisualEditor' );
 $wgVisualEditorAvailableNamespaces = [
@@ -101,7 +102,7 @@ $wgVisualEditorAvailableNamespaces = [
 
 $wgVirtualRestConfig['modules']['parsoid'] = array(
 	'url' => "http://localhost/w/rest.php",
-);
+); //*/
 
 wfLoadSkin( 'MinervaNeue' );
 wfLoadSkin( 'DarkVector' );
