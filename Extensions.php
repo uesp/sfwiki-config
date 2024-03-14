@@ -329,8 +329,6 @@ function SFWikiUploadWizard_beforePageDisplay($out, $skin)
 	$out->addModules( 'ext.uploadWizardSfWiki' );
 }
 
-wfLoadExtension( 'UespBreadCrumb' );
-
 wfLoadExtension( 'GTag' );
 $wgGTagAnalyticsId = 'G-HLRGHY4G65';
 
@@ -340,6 +338,7 @@ wfLoadExtension( "PageSpeedLog" );
 $wgPageSpeedLogFile = "/var/log/httpd/sfwiki-pagespeed.log";
 
 wfLoadExtension( 'ParserHelper' );
-wfLoadExtension( 'MetaTemplate' );
-wfLoadExtension( 'NSInfo' );
-wfLoadExtension( 'Riven' );
+wfLoadExtension( 'MetaTemplate' ); // Dependent on ParserHelper
+wfLoadExtension( 'NSInfo' ); // Dependent on ParserHelper
+wfLoadExtension( 'Riven' ); // Dependent on ParserHelper
+wfLoadExtension( 'UespBreadCrumb' ); // Dependent on ParserHelper
