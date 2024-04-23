@@ -169,6 +169,7 @@ $wgLocalisationUpdateDirectory = "/home/sfwiki/cache";
 wfLoadExtension( 'DeleteBatch' );
 wfLoadExtension( 'DisableAccount' );
 wfLoadExtension( 'Disambiguator' );
+wfLoadExtension( 'JobQueue' );
 wfLoadExtension( 'JsonConfig' );
 wfLoadExtension( 'LabeledSectionTransclusion' );
 
