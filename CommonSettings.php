@@ -56,7 +56,7 @@ $wgUseImageMagick = true;
 $wgImageMagickConvertCommand = "/usr/bin/convert";
 
 $wgHashedUploadDirectory = true;
-array_push($wgFileExtensions, 'ogg', 'zip', 'bmp', 'pcx', 'tga', 'svg', 'webm', 'webp');
+array_push($wgFileExtensions, 'ogg', 'zip', 'pcx', 'tga', 'svg', 'webm', 'webp');
 
 $wgUseInstantCommons = false;
 
