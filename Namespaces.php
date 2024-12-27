@@ -20,6 +20,7 @@ $wgNamespaceAliases = array(
 	'SF' => 100,         'SF_talk' => 101,
 	'LO' => 102,         'LO_talk' => 103,
 	'GE' => 104,         'GE_talk' => 105,
+	'SFM' => 106,        'SFM_talk' => 107,
 	'SFMod' => 106,      'SFMod_talk' => 107
 );
 
