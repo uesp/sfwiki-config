@@ -14,6 +14,7 @@ ignore = .git*
 dest = content1.uesp.net:/home/sfwiki/www/w/config/
 dest = content2.uesp.net:/home/sfwiki/www/w/config/
 dest = content3.uesp.net:/home/sfwiki/www/w/config/
+dest = content4.uesp.net:/home/sfwiki/www/w/config/
 
 destname = [backup]backup1.uesp.net:/home/sfwiki/www/w/config/
 destname = [dev]content3.uesp.net:/home/sfwiki/dev/www/w/config/

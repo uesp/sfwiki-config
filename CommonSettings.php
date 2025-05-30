@@ -42,8 +42,6 @@ $wgFooterIcons['poweredby']['twelveworlds'] = array(
 		"src" => "//images.uesp.net/e/ed/TwelveWorldsSmallLogo.png",
 		"url" => "//twelveworlds.net",
 		"alt" => "[Proudly Hosted by Twelve Worlds]",
-		"width" => 150,
-		"height" => 46,
 );
 
 $wgEnableEmail = true;
