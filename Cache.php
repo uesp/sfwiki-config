@@ -8,11 +8,12 @@
 
 
 ## Shared memory settings
-$wgMainCacheType = CACHE_MEMCACHED;
+#$wgMainCacheType = CACHE_MEMCACHED;
 $wgObjectCacheSessionExpiry = 100000;
-$wgSessionsInObjectCache = true;
+$wgSessionsInObjectCache = false;
+$wgSessionCacheType = CACHE_DB;
 
-$wgCacheEpoch = 20230716102721;
+$wgCacheEpoch = 20250603010000;
 
 if ($sfwikiIsDev)
 {

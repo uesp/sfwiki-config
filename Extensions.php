@@ -111,7 +111,6 @@ if ($sfwikiIsDev)
 {
 	wfLoadSkin( 'SFWikiDarkVector' );
 }
-
 wfLoadExtension( 'SFWikiCustomCode' );
 
 wfLoadExtension( 'ParserFunctions' );
